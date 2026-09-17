@@ -43,7 +43,7 @@ public class MoonSteelModels {
 		dispatcher.addDispatch(makeModel(MoonSteelItems.ARMOR_LEGGINGS_MOONSTEEL, "moonsteel_leggings"));
 		dispatcher.addDispatch(makeModel(MoonSteelItems.ARMOR_BOOTS_MOONSTEEL, "moonsteel_boots"));
 		dispatcher.addDispatch(makeModel(MoonSteelItems.STAR_FALLEN, "fallen_star").setFullBright());
-		dispatcher.addDispatch(setIcon(new ItemModelConnectStar(MoonSteelItems.STAR_CONNECTED, null), MOD_ID + ":item/connected_star_off").setFullBright());
+		dispatcher.addDispatch(setIcon(new ItemModelConnectStar(MoonSteelItems.STAR_CONNECTED), MOD_ID + ":item/connected_star_off").setFullBright());
 		dispatcher.addDispatch(makeModel(MoonSteelItems.BACKPACK_COSMIC, "starpack"));
 	}
 

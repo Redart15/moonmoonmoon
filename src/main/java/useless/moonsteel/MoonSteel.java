@@ -31,6 +31,7 @@ import static useless.moonsteel.MoonSteelItems.*;
 
 public class MoonSteel implements ModInitializer {
     public static final String MOD_ID = HalpLibe.registerMod("moonsteel");
+    public static final String MOJANG_ID = HalpLibe.registerMod("sound3");
 	public static final Key KEY = Key.of(MOD_ID);
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final String SMOKE = "moonsteel$magic_smoke";
@@ -75,6 +76,7 @@ public class MoonSteel implements ModInitializer {
 
 	public void beforeGameStart() {
 		SoundTypes.loadSoundsJson(MOD_ID);
+		SoundTypes.loadSoundsJson(MOJANG_ID);
 		TileEntityDispatcher.addMapping(
 			TileEntityStellarRewinder.class,
 			NamespaceID.fromPool(MOD_ID, "moonsteel$stellar_rewinder")

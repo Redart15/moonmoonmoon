@@ -11,12 +11,13 @@ import net.minecraft.core.world.World;
 import net.minecraft.core.world.pos.TilePosc;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import useless.moonsteel.MoonSteel;
 import useless.moonsteel.MoonSteelItems;
 
 import java.util.Random;
 
 public class BlockStellarRewinder extends BlockLogicRotatable {
+	private static final Random random = new Random();
+
 	//Uses BlockTileEntityRotatable for its rotation properties not because its a tileEntity
 	public BlockStellarRewinder(Block<?> block, Material material) {
 		super(block, material);
@@ -26,11 +27,15 @@ public class BlockStellarRewinder extends BlockLogicRotatable {
 	@Override
 	public boolean onInteracted(@NotNull World world, @NotNull TilePosc tilePos, @NotNull Player player, @Nullable Side side, double xHit, double yHit) {
 		ItemStack heldItem = player.getHeldItem();
-		TileEntityStellarRewinder rewinder = (TileEntityStellarRewinder) world.getTileEntity(tilePos);
-		if (heldItem != null && heldItem.getItem() == MoonSteelItems.STAR_CONNECTED && rewinder != null){
-			rewinder.linkStar(heldItem);
-			return true;
-		}
+		TileEntity tileEntity = world.getTileEntity(tilePos);
+		if(tileEntity instanceof TileEntityStellarRewinder rewinder
+			&& heldItem != null
+			&& heldItem.getItem() == MoonSteelItems.STAR_CONNECTED
+		){
+				rewinder.linkStar(heldItem);
+				world.playSoundAtEntity(null, player, "ui.ui_click", 5, 1f + random.nextFloat() * 0.1f);
+				return true;
+			}
 		return false;
 	}
 

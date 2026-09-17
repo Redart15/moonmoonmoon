@@ -35,6 +35,7 @@ public class MoonSteelItems {
 	public static final Item TOOL_HOE_MOONSTEEL = new ItemBuilder(MOD_ID)
 		.build(new ItemToolHoe("tool.hoe.moonsteel", MOD_ID + ":item/tool_hoe_moonsteel", MoonSteel.itemId++, MOON_STEEL_TOOL));
 	public static final Item TOOL_SWORD_MOONSTEEL = new ItemBuilder(MOD_ID)
+		.addTags(ItemTags.PREVENT_CREATIVE_MINING)
 		.build(new ItemToolSword("tool.sword.moonsteel", MOD_ID + ":item/tool_sword_moonsteel", MoonSteel.itemId++, MOON_STEEL_TOOL));
 
 	public static final ArmorMaterial MOON_STEEL_ARMOR = ArmorHelper.createArmorMaterial(MOD_ID, "moonsteel", 800, 51f, 45f, 45f, 100f);

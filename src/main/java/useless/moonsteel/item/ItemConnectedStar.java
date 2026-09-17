@@ -59,6 +59,7 @@ public class ItemConnectedStar extends Item {
 				itemstack.getData().putBoolean("moonsteel$has_location", false);
 			} else if (!world.isClientSide) {
 				entityplayer.sendMessageTranslated("moonsteel.teleport.fail.missing");
+				itemstack.getData().putBoolean("moonsteel$has_location", false);
 			}
 		}
 		return itemstack;

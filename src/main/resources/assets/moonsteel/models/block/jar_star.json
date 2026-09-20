@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_lantern",
+  "textures": {
+    "all": "moonsteel:block/jar_star"
+  }
+}

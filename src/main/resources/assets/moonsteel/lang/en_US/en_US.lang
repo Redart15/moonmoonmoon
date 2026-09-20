@@ -44,5 +44,29 @@ moonsteel.container.backpack.star.name=Stardust Backpack
 subtitles.moonsteel.starspawn=Starfall
 subtitles.moonsteel.click.rewinder=Star Link
 
+score.command.not.applicable= The command is not applicable to this entity.
+score.command.cannot= Invalid target.
+score.command.add= Added %2$d score to %1$s.
+score.command.remove= Subtracted %2$d from %1$s.
+score.command.info= Player %1$s has a score of %2$d.
+score.command.set= Set %1$s score to %2$d.
+
+# compat 1
+item.moonsteel.tool.paxel.moonsteel.name=Moonsteel Paxel
+
 tile.moonsteel.star.lamp.name=Star Lamp
 tile.moonsteel.star.lamp.desc=Shiny new lamp.
+item.moonsteel.jar.star.name=Jar Star
+item.moonsteel.jar.star.desc=A star in a jar, let off dim light.
+tile.moonsteel.jar.star.name=Jar Star
+tile.moonsteel.jar.star.desc=How did you get this item?
+item.moonsteel.armor.wolf.moonsteel.name=Moonsteel Wolf Armor
+item.moonsteel.armor.wolf.moonsteel.desc=Keep your best friend spacy!
+
+tile.moonsteel.brick.moonsteel.name=Moonsteel Bricks
+tile.moonsteel.brick.moonsteel.desc=Stacked bricks of moonsteel.
+tile.moonsteel.slab.brick.moonsteel.name=Moonsteel Bricks Slab
+tile.moonsteel.slab.brick.moonsteel.desc=A slab of moonsteel bricks.
+tile.moonsteel.stair.brick.moonsteel.name=Moonsteel Bricks Stairs
+tile.moonsteel.stair.brick.moonsteel.desc=Moonsteel brick block used for vertical movement.
+

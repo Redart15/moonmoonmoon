@@ -5,7 +5,7 @@ import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
-import useless.moonsteel.interfaces.ITeleporter;
+import useless.moonsteel.item.connectstar.ITeleporter;
 
 @Mixin(Player.class)
 public class PlayerMixinStella extends Mob implements ITeleporter {

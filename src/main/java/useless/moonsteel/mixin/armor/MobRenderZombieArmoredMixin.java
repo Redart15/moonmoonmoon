@@ -24,7 +24,7 @@ public class MobRenderZombieArmoredMixin {
 		CallbackInfoReturnable<StaticEntityModel> cir
 	){
 		if (((IStarZombie)zombie).moonsteel$isStarZombie()){
-			String texturePath = "/assets/moonsteel/textures/armor/moonsteel_" + (renderPass != 2 ? 1 : 2) + ".png";
+			String texturePath = "/assets/moonsteel/textures/armor/moonsteel_" + (renderPass != 3 ? 1 : 2) + ".png";
 			TextureManager textureManager = Minecraft.getMinecraft().textureManager;
 			textureManager.bindTexture(textureManager.loadTexture(texturePath));
 

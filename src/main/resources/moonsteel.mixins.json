@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "useless.moonsteel.mixin",
   "compatibilityLevel": "JAVA_${java}",
-  "plugin": "useless.moonsteel.MoonSteelMixinPlugin",
+  "plugin": "useless.moonsteel.api.MoonSteelMixinPlugin",
   "mixinextras": {
     "minVersion": "0.5.0"
   },
@@ -17,10 +17,13 @@
     "stella.PlayerServerMixinStella"
   ],
   "mixins": [
-    "accessor.ParticleFlameAccessor",
     "WorldFeatureLabyrinthMixinRewards",
+    "accessor.ChunkProviderServerAccessor",
+    "accessor.ChunkProviderThreadedAccessor",
     "accessor.ItemToolSwordAccessor",
+    "accessor.ParticleFlameAccessor",
     "armor.MobMixin",
+    "armor.MobWolfMixin",
     "armor.MobZombieArmoredMixin",
     "armor.PlayerMixinEquipment",
     "backpack.MinecraftMixinRespawn",

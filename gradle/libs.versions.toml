@@ -29,10 +29,10 @@ legacyLwjgl = "1.0.6"
 slf4jApi = "2.0.17"
 # This should match the version used by the current BTA release.
 lwjgl = "3.3.3"
-
 joml = "1.10.8" # Note: BTA uses 1.10.7, patch 8 removes the kotlin stdlib dependency
 jomlPrimitivess = "1.10.0"
-
+commandly = "1.1.6+8.0.1"
+paxels = "1.5.0+8.0.1"
 btabackpacks = "1.2.0-8.0"
 ##########################################################################
 
@@ -43,6 +43,8 @@ halplibe = { group = "turniplabs", name = "halplibe", version.ref = "halplibe" }
 modMenu = { group = "turniplabs", name = "modmenu-bta", version.ref = "modMenu" }
 legacyLwjgl = { group = "com.github.Better-than-Adventure", name = "legacy-lwjgl3", version.ref = "legacyLwjgl" }
 slf4jApi = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4jApi" }
+commandly = { group = "maven.modrinth", name = "commandly", version.ref = "commandly" }
+paxels = { group = "maven.modrinth", name = "paxels-bta", version.ref = "paxels" }
 # https://piston-data.mojang.com/v1/objects/43db9b498cb67058d2e12d394e6507722e71bb45/client.jar
 clientJar = { group = "objects", name = "client", version = "43db9b498cb67058d2e12d394e6507722e71bb45" }
 joml = { group = "org.joml", name = "joml", version.ref = "joml" }

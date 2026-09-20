@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import useless.moonsteel.MoonSteel;
-import useless.moonsteel.MoonSteelItems;
+import useless.moonsteel.item.MoonSteelItems;
 import useless.moonsteel.interfaces.IMoonGrav;
 import useless.moonsteel.interfaces.IStarZombie;
 

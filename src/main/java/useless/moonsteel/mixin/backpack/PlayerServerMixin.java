@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
-import useless.moonsteel.ContainerStarBackpack;
+import useless.moonsteel.api.backpack.ContainerStarBackpack;
 import useless.moonsteel.MoonSteel;
 
 @Mixin(value = PlayerServer.class, remap = false)

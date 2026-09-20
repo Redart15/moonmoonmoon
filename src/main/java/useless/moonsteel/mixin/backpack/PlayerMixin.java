@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import useless.moonsteel.backpack.StarBackpackInventory;
-import useless.moonsteel.interfaces.IStarBackpack;
+import useless.moonsteel.api.backpack.StarBackpackInventory;
+import useless.moonsteel.api.backpack.IStarBackpack;
 
 @Mixin(value = Player.class, remap = false)
 public abstract class PlayerMixin extends Mob implements IStarBackpack {

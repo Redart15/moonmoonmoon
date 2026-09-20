@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import useless.moonsteel.MoonSteelItems;
+import useless.moonsteel.item.MoonSteelItems;
 import useless.moonsteel.interfaces.IMoonGrav;
 import useless.moonsteel.MoonSteel;
 import useless.moonsteel.mixin.accessor.ItemToolSwordAccessor;

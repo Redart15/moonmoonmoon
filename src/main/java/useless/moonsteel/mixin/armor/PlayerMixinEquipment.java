@@ -5,7 +5,7 @@ import net.minecraft.core.enums.HumanArmorShape;
 import net.minecraft.core.player.inventory.container.ContainerInventory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import useless.moonsteel.MoonSteelItems;
+import useless.moonsteel.item.MoonSteelItems;
 import useless.moonsteel.interfaces.IMoonGrav;
 
 @Mixin(value = Player.class, remap = false)

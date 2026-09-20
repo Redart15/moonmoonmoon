@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import useless.moonsteel.interfaces.IStarBackpack;
+import useless.moonsteel.api.backpack.IStarBackpack;
 
 @Mixin(value = PlayerList.class, remap = false)
 public class PlayerListMixinRespawn {

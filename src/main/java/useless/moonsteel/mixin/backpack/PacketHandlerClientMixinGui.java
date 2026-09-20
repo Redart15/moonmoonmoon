@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import useless.moonsteel.MoonSteel;
-import useless.moonsteel.interfaces.IStarBackpack;
+import useless.moonsteel.api.backpack.IStarBackpack;
 
 @Mixin(value= PacketHandlerClient.class,remap = false)
 public abstract class PacketHandlerClientMixinGui {

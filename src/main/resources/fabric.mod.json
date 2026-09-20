@@ -23,7 +23,8 @@
   "environment": "*",
   "entrypoints": {
     "main": 		["useless.moonsteel.MoonSteel"],
-		"client": 	["useless.moonsteel.MoonSteelClient"]
+		"client": 	["useless.moonsteel.MoonSteelClient"],
+		"server": 	["useless.moonsteel.MoonSteelServer"]
 	},
   "mixins": [
       "moonsteel.mixins.json"

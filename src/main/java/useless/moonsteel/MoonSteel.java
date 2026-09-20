@@ -20,13 +20,17 @@ import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryPlacement;
 import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryRegistry;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.dependency.Key;
-import useless.moonsteel.block.TileEntityStellarRewinder;
+import useless.moonsteel.api.MoonSteelCompat;
+import useless.moonsteel.block.MoonSteelBlocks;
+import useless.moonsteel.block.rewinder.TileEntityStellarRewinder;
+import useless.moonsteel.item.MoonSteelItems;
+import useless.moonsteel.recipe.MoonSteelRecipes;
 
 import java.util.Properties;
 import java.util.function.Supplier;
 
-import static useless.moonsteel.MoonSteelBlocks.*;
-import static useless.moonsteel.MoonSteelItems.*;
+import static useless.moonsteel.block.MoonSteelBlocks.*;
+import static useless.moonsteel.item.MoonSteelItems.*;
 
 
 public class MoonSteel implements ModInitializer {
@@ -72,6 +76,7 @@ public class MoonSteel implements ModInitializer {
 		CommonEvents.BEFORE_GAME_START.listen(KEY, this::beforeGameStart);
 		CommonEvents.RECIPES_READY.listen(KEY, MoonSteelRecipes::onRecipesReady);
 		CommonEvents.RECIPES_NAMESPACE_INIT.listen(KEY, MoonSteelRecipes::initNamespaces);
+		MoonSteelCompat.init();
     }
 
 	public void beforeGameStart() {
@@ -88,6 +93,10 @@ public class MoonSteel implements ModInitializer {
 		CreativeInventoryRegistry.INSTANCE.register(TORCH_STAR, place(() -> Blocks.TORCH_COAL));
 		CreativeInventoryRegistry.INSTANCE.register(STELLAR_REWINDER, place());
 		CreativeInventoryRegistry.INSTANCE.register(STAR_LAMP, place(() -> Blocks.TORCH_COAL));
+		CreativeInventoryRegistry.INSTANCE.register(STAR_JAR, place(() -> Blocks.LANTERN_FIREFLY_RED));
+		CreativeInventoryRegistry.INSTANCE.register(MOONSTEEL_BRICKS, place(() -> Blocks.SLAB_BRICK_RUBYGLASS));
+		CreativeInventoryRegistry.INSTANCE.register(SLAB_MOONSTEEL_BRICK, place(() -> Blocks.SLAB_BRICK_RUBYGLASS));
+		CreativeInventoryRegistry.INSTANCE.register(STAIR_MOONSTEEL_BRICKS, place(() -> Blocks.SLAB_BRICK_RUBYGLASS));
 		// items
 		CreativeInventoryRegistry.INSTANCE.register(INGOT_MOONSTEEL_CRUDE, place(() -> Items.INGOT_STEEL_CRUDE));
 		CreativeInventoryRegistry.INSTANCE.register(INGOT_MOONSTEEL, place(() -> Items.INGOT_STEEL_CRUDE));
@@ -102,6 +111,8 @@ public class MoonSteel implements ModInitializer {
 		CreativeInventoryRegistry.INSTANCE.register(ARMOR_CHESTPLATE_MOONSTEEL, place(() -> Items.ARMOR_WOLF_STEEL));
 		CreativeInventoryRegistry.INSTANCE.register(ARMOR_LEGGINGS_MOONSTEEL, place(() -> Items.ARMOR_WOLF_STEEL));
 		CreativeInventoryRegistry.INSTANCE.register(ARMOR_BOOTS_MOONSTEEL, place(() -> Items.ARMOR_WOLF_STEEL));
+		CreativeInventoryRegistry.INSTANCE.register(ARMOR_WOLF_MOONSTEEL, place(() -> Items.ARMOR_WOLF_STEEL));
+
 		if (backpackPresent){
 			CreativeInventoryRegistry.INSTANCE.register(BACKPACK_COSMIC, place(() -> Items.ARMOR_WOLF_STEEL));
 		}

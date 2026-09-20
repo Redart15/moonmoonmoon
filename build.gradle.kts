@@ -44,8 +44,15 @@ dependencies {
 	implementation(libs.loader)
 	implementation(libs.halplibe) // If you do not need halplibe you can delete this line
 
+    //-Dmixin.debug.export=true mixin flag
+
     compileOnly(libs.btabackpacks)
-    //-Dmixin.debug.export=true
+    compileOnly(libs.paxels)
+
+    // for later
+//    compileOnly(libs.commandly)
+//    compileOnly(libs.aether)
+
 
 	// Only required at compilation
 	// provides documentation, can be removed if that isn't needed

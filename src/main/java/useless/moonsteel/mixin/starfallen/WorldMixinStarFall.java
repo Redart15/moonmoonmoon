@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import useless.moonsteel.MoonSteel;
-import useless.moonsteel.MoonSteelItems;
+import useless.moonsteel.item.MoonSteelItems;
 import useless.moonsteel.interfaces.IFallenStar;
 
 import java.util.Random;

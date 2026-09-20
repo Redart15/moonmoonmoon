@@ -1,18 +1,18 @@
 package useless.moonsteel;
 
 import net.minecraft.client.render.block.model.BlockModelDispatcher;
-import net.minecraft.client.render.block.model.generic.BlockModelGeneric;
-import net.minecraft.client.render.block.model.generic.BlockModelGenericRotatable;
-import net.minecraft.client.render.block.model.generic.BlockModelGenericTorch;
+import net.minecraft.client.render.block.model.generic.*;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelStandard;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.util.collection.NamespaceID;
 import org.jetbrains.annotations.NotNull;
-import useless.moonsteel.block.BlockModelStarLamp;
-import useless.moonsteel.block.BlockModelStellarRewinder;
-import useless.moonsteel.item.ItemModelConnectStar;
+import useless.moonsteel.block.lamp.BlockModelStarLamp;
+import useless.moonsteel.block.rewinder.BlockModelStellarRewinder;
+import useless.moonsteel.block.MoonSteelBlocks;
+import useless.moonsteel.item.connectstar.ItemModelConnectStar;
+import useless.moonsteel.item.MoonSteelItems;
 
 import static net.minecraft.client.render.block.model.BlockModelDispatcher.loadDataModel;
 import static net.minecraft.client.render.item.model.ItemModelDispatcher.*;
@@ -27,6 +27,11 @@ public class MoonSteelModels {
 		dispatcher.addDispatch(new BlockModelGenericTorch<>(MoonSteelBlocks.TORCH_STAR, MOD_ID + ":block/star_torch").render3D(false));
 		dispatcher.addDispatch(new BlockModelStellarRewinder<>(MoonSteelBlocks.STELLAR_REWINDER, MOD_ID + ":block/stellarrewinder"));
 		dispatcher.addDispatch(new BlockModelStarLamp<>(MoonSteelBlocks.STAR_LAMP, loadDataModel(MOD_ID + ":block/starlamp")));
+		dispatcher.addDispatch(new BlockModelGenericLantern<>(MoonSteelBlocks.JAR_STAR, loadDataModel(MOD_ID + ":block/jar_star"), loadDataModel(MOD_ID + ":block/jar_star_hanging")));
+
+		dispatcher.addDispatch(new BlockModelGeneric<>(MoonSteelBlocks.MOONSTEEL_BRICKS, loadDataModel(MOD_ID + ":block/moonsteel_brick")));
+		dispatcher.addDispatch(new BlockModelGenericSlab<>(MoonSteelBlocks.SLAB_MOONSTEEL_BRICK, loadDataModel(MOD_ID + ":block/slab/lower"), loadDataModel(MOD_ID + ":block/slab/upper"), loadDataModel(MOD_ID + ":block/slab/full")));
+		dispatcher.addDispatch(new BlockModelGenericStairs<>(MoonSteelBlocks.STAIR_MOONSTEEL_BRICKS, loadDataModel(MOD_ID + ":block/moonsteel_stair")));
 	}
 
 
@@ -45,6 +50,8 @@ public class MoonSteelModels {
 		dispatcher.addDispatch(makeModel(MoonSteelItems.STAR_FALLEN, "fallen_star").setFullBright());
 		dispatcher.addDispatch(setIcon(new ItemModelConnectStar(MoonSteelItems.STAR_CONNECTED), MOD_ID + ":item/connected_star_off").setFullBright());
 		dispatcher.addDispatch(makeModel(MoonSteelItems.BACKPACK_COSMIC, "starpack"));
+		dispatcher.addDispatch(makeModel(MoonSteelItems.STAR_JAR, "jar_star"));
+		dispatcher.addDispatch(makeModel(MoonSteelItems.ARMOR_WOLF_MOONSTEEL, "moonsteel_wolf_armor"));
 	}
 
 

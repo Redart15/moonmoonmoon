@@ -42,3 +42,13 @@ moonsteel.teleport.fail.dimension=Якорь в другом измерение!
 moonsteel.container.backpack.star.name=Звезвдный Рюкзак
 tile.moonsteel.star.lamp.name=Звёздная лампа
 tile.moonsteel.star.lamp.desc=Новая блестящая лампа.
+
+score.command.not.applicable= Команда не применима к этой сущности.
+score.command.cannot= Неверная цель.
+score.command.add= Счет игрока %1$s увеличен на %2$d очков.
+score.command.remove= Счёт игрока %1$s уменьшен на %2$d очков.
+score.command.info= Счёт игрока %1$s: %2$d.
+score.command.set= Счёт игрока %1$s установлен на %2$d.
+
+#paxel
+item.moonsteel.tool.paxel.moonsteel.name=Лунсталный паксель

@@ -8,7 +8,7 @@ import net.minecraft.core.item.Items;
 import net.minecraft.core.util.helper.DyeColor;
 import tosutosu.betterwithbackpacks.ModItems;
 import turniplabs.halplibe.helper.RecipeBuilder;
-import useless.moonsteel.MoonSteel;
+import useless.moonsteel.MoonSteelConstants;
 import useless.moonsteel.block.MoonSteelBlocks;
 import useless.moonsteel.item.MoonSteelItems;
 
@@ -117,6 +117,11 @@ public class MoonSteelRecipes {
 			.create("block_of_moonsteel", MoonSteelBlocks.BLOCK_MOONSTEEL.getDefaultStack());
 
 		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("M")
+			.addInput('M', MoonSteelBlocks.BLOCK_MOONSTEEL)
+			.create("block_to_moonsteel", new ItemStack(MoonSteelItems.INGOT_MOONSTEEL, 9));
+
+		RecipeBuilder.Shaped(MOD_ID)
 			.setShape(
 				"F",
 				"S")
@@ -144,7 +149,7 @@ public class MoonSteelRecipes {
 			.addInput('C', MoonSteelItems.STAR_CONNECTED)
 			.create("stellar_rewinder", MoonSteelBlocks.STELLAR_REWINDER.getDefaultStack());
 
-		if (MoonSteel.backpackPresent){
+		if (MoonSteelConstants.BACKPACKS.getAsBoolean()){
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape(
 					"MMM",
@@ -178,11 +183,26 @@ public class MoonSteelRecipes {
 			.addInput('J', Items.JAR)
 			.create("jar_star", new ItemStack(MoonSteelItems.STAR_JAR));
 
-
 		RecipeBuilder.Shaped(MOD_ID)
 			.setShape(" MM", "MMM", "M M")
 			.addInput('M', MoonSteelItems.INGOT_MOONSTEEL)
 			.create("moonstee_wolf_armor", new ItemStack(MoonSteelItems.ARMOR_WOLF_MOONSTEEL));
+
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("MM", "MM")
+			.addInput('M', MoonSteelBlocks.BLOCK_MOONSTEEL)
+			.create("moonsteel_bricks", new ItemStack(MoonSteelBlocks.MOONSTEEL_BRICKS, 4));
+
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("M", "MM", "MMM")
+			.addInput('M', MoonSteelBlocks.MOONSTEEL_BRICKS)
+			.create("moonsteel_bricks_stairs", new ItemStack(MoonSteelBlocks.STAIR_MOONSTEEL_BRICKS));
+
+
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("MMM")
+			.addInput('M', MoonSteelBlocks.MOONSTEEL_BRICKS)
+			.create("moonsteel_bricks_slab", new ItemStack(MoonSteelBlocks.SLAB_MOONSTEEL_BRICK));
 	}
 
 	public static void initNamespaces() {

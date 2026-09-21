@@ -1,7 +1,5 @@
 package useless.moonsteel.item;
 
-import net.minecraft.core.block.Blocks;
-import net.minecraft.core.entity.animal.MobWolf;
 import net.minecraft.core.enums.HumanArmorShape;
 import net.minecraft.core.enums.WolfArmorShape;
 import net.minecraft.core.item.*;
@@ -13,13 +11,13 @@ import net.minecraft.core.item.tool.ItemToolHoe;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
 import net.minecraft.core.item.tool.ItemToolShovel;
 import net.minecraft.core.item.tool.ItemToolSword;
-import org.jetbrains.annotations.NotNull;
 import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.ItemBuilder;
 import useless.moonsteel.MoonSteel;
 import useless.moonsteel.api.backpack.BackpackProxy;
 import useless.moonsteel.block.MoonSteelBlocks;
 import useless.moonsteel.item.connectstar.ItemConnectedStar;
+import useless.moonsteel.MoonSteelConstants;
 
 import static useless.moonsteel.MoonSteel.MOD_ID;
 
@@ -99,8 +97,9 @@ public class MoonSteelItems {
 	}
 
 	private static void initBackpack() {
-		MoonSteel.LOGGER.info("Backpacks present: {}", MoonSteel.backpackPresent);
-		if (MoonSteel.backpackPresent){
+		boolean backPackIncluded = MoonSteelConstants.BACKPACKS.getAsBoolean();
+		MoonSteelConstants.LOGGER.info("Backpacks present: {}", backPackIncluded);
+		if (backPackIncluded){
 			BACKPACK_COSMIC = new ItemBuilder(MOD_ID)
 				.setStackSize(1)
 				.build( BackpackProxy.proxyBackpack("backpack.cosmic", MOD_ID + ":item/backpack_cosmic", MoonSteel.itemId++));

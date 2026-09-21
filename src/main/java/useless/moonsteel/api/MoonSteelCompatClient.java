@@ -2,6 +2,7 @@ package useless.moonsteel.api;
 
 import net.fabricmc.loader.api.FabricLoader;
 import turniplabs.halplibe.event.defs.ClientEvents;
+import useless.moonsteel.MoonSteelConstants;
 import useless.moonsteel.api.paxel.MoonSteelPaxel;
 
 import static useless.moonsteel.MoonSteel.KEY;
@@ -13,7 +14,7 @@ public class MoonSteelCompatClient {
 	}
 
 	public static void init(){
-		if(FabricLoader.getInstance().isModLoaded("paxels")){
+		if(MoonSteelConstants.PAXEL.getAsBoolean()){
 			ClientEvents.ITEM_MODEL_RELOAD.listen(KEY, MoonSteelPaxel::initItemModels);
 		}
 	}

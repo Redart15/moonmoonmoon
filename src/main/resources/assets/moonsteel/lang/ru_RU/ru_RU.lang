@@ -37,11 +37,12 @@ tile.moonsteel.stellar.rewinder.name=Звездная перемотка
 tile.moonsteel.stellar.rewinder.desc=Якорь для соединенный звезды, на которую можно ссылаться.
 
 moonsteel.teleport.fail.missing=Якорь был сломан, невозможно вернутса!
+moonsteel.teleport.fail.score=Not enough score to establish link.
 moonsteel.teleport.fail.dimension=Якорь в другом измерение!
 
 moonsteel.container.backpack.star.name=Звезвдный Рюкзак
-tile.moonsteel.star.lamp.name=Звёздная лампа
-tile.moonsteel.star.lamp.desc=Новая блестящая лампа.
+subtitles.moonsteel.starspawn=Звездопад
+subtitles.moonsteel.click.rewinder=Звёздный линк
 
 score.command.not.applicable= Команда не применима к этой сущности.
 score.command.cannot= Неверная цель.
@@ -52,3 +53,19 @@ score.command.set= Счёт игрока %1$s установлен на %2$d.
 
 #paxel
 item.moonsteel.tool.paxel.moonsteel.name=Лунсталный паксель
+
+tile.moonsteel.star.lamp.name=Звёздный лампа
+tile.moonsteel.star.lamp.desc=Новая сверкающая лампа.
+item.moonsteel.jar.star.name=Звёздный фонарь
+item.moonsteel.jar.star.desc=Звезда в банке.
+tile.moonsteel.jar.star.name=Jar Star
+tile.moonsteel.jar.star.desc=Как вы этого добились?
+item.moonsteel.armor.wolf.moonsteel.name=Лунстальная волчья броня
+item.moonsteel.armor.wolf.moonsteel.desc=Пусть ваш лучший друг будет космическим!
+
+tile.moonsteel.brick.moonsteel.name=Лунстальные кирпичи
+tile.moonsteel.brick.moonsteel.desc=Сложенные кирпичи из лунстали.
+tile.moonsteel.slab.brick.moonsteel.name=Плита лунстальных кирпичей
+tile.moonsteel.slab.brick.moonsteel.desc=Плита из лунстальных кирпичей.
+tile.moonsteel.stair.brick.moonsteel.name=Ступени из лунстальных кирпичей
+tile.moonsteel.stair.brick.moonsteel.desc=Блок лунстальных кирпичей для вертикального подъёма.

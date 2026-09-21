@@ -28,6 +28,8 @@
     "armor.PlayerMixinEquipment",
     "backpack.MinecraftMixinRespawn",
     "backpack.PlayerMixin",
+    "commandly.VeinMinerMixin",
+    "commandly.VeinMiningAccessor",
     "fortune.BlockLogicMixin",
     "starfallen.EntityItemMixin",
     "starfallen.WorldMixinStarFall",

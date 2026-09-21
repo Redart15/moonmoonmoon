@@ -48,9 +48,9 @@ dependencies {
 
     compileOnly(libs.btabackpacks)
     compileOnly(libs.paxels)
+    compileOnly(libs.commandly)
 
     // for later
-//    compileOnly(libs.commandly)
 //    compileOnly(libs.aether)
 
 

@@ -1,8 +1,5 @@
 package useless.moonsteel.mixin.fortune;
 
-import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;
 import net.minecraft.core.block.Block;
@@ -24,10 +21,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import useless.moonsteel.MoonSteel;
 import useless.moonsteel.block.MoonSteelBlocks;
 import useless.moonsteel.item.MoonSteelItems;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Mixin(value = BlockLogic.class, remap = false)
 public abstract class BlockLogicMixin {

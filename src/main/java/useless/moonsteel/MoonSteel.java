@@ -1,7 +1,6 @@
 package useless.moonsteel;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.entity.TileEntityDispatcher;
 import net.minecraft.core.item.IItemConvertible;
@@ -11,8 +10,6 @@ import net.minecraft.core.sound.SoundTypes;
 import net.minecraft.core.util.collection.NamespaceID;
 import net.minecraft.core.world.World;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.HalpLibe;
 import turniplabs.halplibe.event.defs.CommonEvents;
 import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryCategory;
@@ -34,13 +31,11 @@ import static useless.moonsteel.item.MoonSteelItems.*;
 
 
 public class MoonSteel implements ModInitializer {
-    public static final String MOD_ID = HalpLibe.registerMod("moonsteel");
-    public static final String MOJANG_ID = HalpLibe.registerMod("sound3");
+	public static final String MOD_ID = HalpLibe.registerMod(MoonSteelConstants.MOD_ID);
 	public static final Key KEY = Key.of(MOD_ID);
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static final String SMOKE = "moonsteel$magic_smoke";
 	public static final String STAR = "moonsteel$star";
-	public static boolean backpackPresent = FabricLoader.getInstance().isModLoaded("betterwithbackpacks");
+	public static final String SMOKE = "moonsteel$magic_smoke";
+	// Settings
 	public static int blockId;
 	public static int itemId;
 	public static int GUI_ID;
@@ -72,7 +67,7 @@ public class MoonSteel implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        LOGGER.info("MoonSteel initialized.");
+        MoonSteelConstants.LOGGER.info("MoonSteel initialized.");
 		CommonEvents.BEFORE_GAME_START.listen(KEY, this::beforeGameStart);
 		CommonEvents.RECIPES_READY.listen(KEY, MoonSteelRecipes::onRecipesReady);
 		CommonEvents.RECIPES_NAMESPACE_INIT.listen(KEY, MoonSteelRecipes::initNamespaces);
@@ -81,7 +76,6 @@ public class MoonSteel implements ModInitializer {
 
 	public void beforeGameStart() {
 		SoundTypes.loadSoundsJson(MOD_ID);
-		SoundTypes.loadSoundsJson(MOJANG_ID);
 		TileEntityDispatcher.addMapping(
 			TileEntityStellarRewinder.class,
 			NamespaceID.fromPool(MOD_ID, "moonsteel$stellar_rewinder")
@@ -113,7 +107,7 @@ public class MoonSteel implements ModInitializer {
 		CreativeInventoryRegistry.INSTANCE.register(ARMOR_BOOTS_MOONSTEEL, place(() -> Items.ARMOR_WOLF_STEEL));
 		CreativeInventoryRegistry.INSTANCE.register(ARMOR_WOLF_MOONSTEEL, place(() -> Items.ARMOR_WOLF_STEEL));
 
-		if (backpackPresent){
+		if (MoonSteelConstants.BACKPACKS.getAsBoolean()){
 			CreativeInventoryRegistry.INSTANCE.register(BACKPACK_COSMIC, place(() -> Items.ARMOR_WOLF_STEEL));
 		}
 	}

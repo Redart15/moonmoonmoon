@@ -18,8 +18,7 @@ import useless.moonsteel.item.MoonSteelItems;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import static useless.moonsteel.MoonSteel.KEY;
-import static useless.moonsteel.MoonSteel.MOD_ID;
+import static useless.moonsteel.MoonSteel.*;
 
 public class MoonSteelClient implements ClientModInitializer {
 
@@ -39,7 +38,7 @@ public class MoonSteelClient implements ClientModInitializer {
 			try {
 				TextureRegistry.initializeAllFiles(MOD_ID, stitcher, true);
 			} catch (URISyntaxException | IOException e) {
-				MoonSteel.LOGGER.error("Failed to initialize texture files!", e);
+				MoonSteelConstants.LOGGER.error("Failed to initialize texture files!", e);
 			}
 		}
 		SoundRepository.namespaceAdded(MOD_ID);
@@ -47,8 +46,8 @@ public class MoonSteelClient implements ClientModInitializer {
 
 
 	public void afterClientStart() {
-		ParticleDispatcher.getInstance().addDispatch("moonsteel$star", (world, x, y, z, motionX, motionY, motionZ, data) -> new ParticleStar(world, x, y, z, motionX, motionY, motionX));
-		ParticleDispatcher.getInstance().addDispatch("moonsteel$magic_smoke", (world, x, y, z, motionX, motionY, motionZ, data) -> new ParticleMagicSmoke(world, x, y, z, motionX, motionY, motionX));
+		ParticleDispatcher.getInstance().addDispatch(STAR, (world, x, y, z, motionX, motionY, motionZ, data) -> new ParticleStar(world, x, y, z, motionX, motionY, motionX));
+		ParticleDispatcher.getInstance().addDispatch(SMOKE, (world, x, y, z, motionX, motionY, motionZ, data) -> new ParticleMagicSmoke(world, x, y, z, motionX, motionY, motionX));
 		EntityPainting.addBorder(MoonSteelItems.INGOT_MOONSTEEL.getDefaultStack(), NamespaceID.fromPool(MOD_ID, "border_moonsteel"));
 
 	}

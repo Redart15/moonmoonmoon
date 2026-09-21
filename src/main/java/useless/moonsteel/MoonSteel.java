@@ -87,7 +87,7 @@ public class MoonSteel implements ModInitializer {
 		CreativeInventoryRegistry.INSTANCE.register(TORCH_STAR, place(() -> Blocks.TORCH_COAL));
 		CreativeInventoryRegistry.INSTANCE.register(STELLAR_REWINDER, place());
 		CreativeInventoryRegistry.INSTANCE.register(STAR_LAMP, place(() -> Blocks.TORCH_COAL));
-		CreativeInventoryRegistry.INSTANCE.register(STAR_JAR, place(() -> Blocks.LANTERN_FIREFLY_RED));
+		CreativeInventoryRegistry.INSTANCE.register(STAR_JAR, place(() -> Items.LANTERN_FIREFLY_RED));
 		CreativeInventoryRegistry.INSTANCE.register(MOONSTEEL_BRICKS, place(() -> Blocks.SLAB_BRICK_RUBYGLASS));
 		CreativeInventoryRegistry.INSTANCE.register(SLAB_MOONSTEEL_BRICK, place(() -> Blocks.SLAB_BRICK_RUBYGLASS));
 		CreativeInventoryRegistry.INSTANCE.register(STAIR_MOONSTEEL_BRICKS, place(() -> Blocks.SLAB_BRICK_RUBYGLASS));

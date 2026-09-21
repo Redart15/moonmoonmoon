@@ -190,19 +190,19 @@ public class MoonSteelRecipes {
 
 		RecipeBuilder.Shaped(MOD_ID)
 			.setShape("MM", "MM")
-			.addInput('M', MoonSteelBlocks.BLOCK_MOONSTEEL)
+			.addInput('M', MoonSteelItems.INGOT_MOONSTEEL_CRUDE)
 			.create("moonsteel_bricks", new ItemStack(MoonSteelBlocks.MOONSTEEL_BRICKS, 4));
 
 		RecipeBuilder.Shaped(MOD_ID)
 			.setShape("M", "MM", "MMM")
 			.addInput('M', MoonSteelBlocks.MOONSTEEL_BRICKS)
-			.create("moonsteel_bricks_stairs", new ItemStack(MoonSteelBlocks.STAIR_MOONSTEEL_BRICKS));
+			.create("moonsteel_bricks_stairs", new ItemStack(MoonSteelBlocks.STAIR_MOONSTEEL_BRICKS, 6));
 
 
 		RecipeBuilder.Shaped(MOD_ID)
 			.setShape("MMM")
 			.addInput('M', MoonSteelBlocks.MOONSTEEL_BRICKS)
-			.create("moonsteel_bricks_slab", new ItemStack(MoonSteelBlocks.SLAB_MOONSTEEL_BRICK));
+			.create("moonsteel_bricks_slab", new ItemStack(MoonSteelBlocks.SLAB_MOONSTEEL_BRICK, 6));
 	}
 
 	public static void initNamespaces() {

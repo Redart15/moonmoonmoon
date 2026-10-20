@@ -21,25 +21,19 @@ public class BlockModelStarLamp<T extends BlockLogic> extends BlockModelGeneric<
 
 	@Override
 	public boolean renderAttached(@NotNull TessellatorGeneral tessellator, @NotNull WorldSource worldSource, @NotNull TilePosc tilePos, boolean cullFaces, @Nullable IconCoordinate overrideTexture) {
-		Side direction = BlockLogicPressurePlate.sideFromMeta(worldSource.getBlockData(tilePos));
-		boolean var10000;
-		switch (direction) {
-			// int rotX, int rotY, int rotZ, double xOff, double yOff, double zOff,
-			case BOTTOM -> 	var10000 = this.getModel(worldSource, tilePos)
-				.renderAttached(this, tessellator, worldSource, tilePos, 1, 0, 0, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
-			case TOP -> 	var10000 = this.getModel(worldSource, tilePos)
-				.renderAttached(this, tessellator, worldSource, tilePos, 3, 0, 0, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
-			case NORTH -> 	var10000 = this.getModel(worldSource, tilePos)
-				.renderAttached(this, tessellator, worldSource, tilePos, 0, 2, 0, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
-			case SOUTH -> 	var10000 = this.getModel(worldSource, tilePos)
-				.renderAttached(this, tessellator, worldSource, tilePos, 0, 0, 0, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
-			case WEST -> 	var10000 = this.getModel(worldSource, tilePos)
-				.renderAttached(this, tessellator, worldSource, tilePos, 0, 3, 0, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
-			default -> 		var10000 = this.getModel(worldSource, tilePos)
-				.renderAttached(this, tessellator, worldSource, tilePos, 0, 1, 0, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
+		int blockData = worldSource.getBlockData(tilePos);
+		Side side = BlockLogicStarLamp.sideFromMeta(blockData);
+		int add = BlockLogicStarLamp.isFlipped(blockData) ? 1 : 0;
+		boolean result = false;
+		switch (side) {
+			case BOTTOM -> 	result = this.getModel(worldSource, tilePos).renderAttached(this, tessellator, worldSource, tilePos, 1, 	add, 			0, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
+			case TOP 	-> 	result = this.getModel(worldSource, tilePos).renderAttached(this, tessellator, worldSource, tilePos, 3, 	add, 			0, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
+			case NORTH 	-> 	result = this.getModel(worldSource, tilePos).renderAttached(this, tessellator, worldSource, tilePos, 0, 	2, 				add, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
+			case SOUTH 	-> 	result = this.getModel(worldSource, tilePos).renderAttached(this, tessellator, worldSource, tilePos, 0, 	0, 				add, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
+			case WEST 	-> 	result = this.getModel(worldSource, tilePos).renderAttached(this, tessellator, worldSource, tilePos, 3, 	(add + 1) & 3, 	1, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
+			default 	-> 	result = this.getModel(worldSource, tilePos).renderAttached(this, tessellator, worldSource, tilePos, 1, 	(add + 1) & 3, 	1, 0.0F, 0.0F, 0.0F, false, cullFaces, overrideTexture);
 		}
-
-		return var10000;
+		return result;
 	}
 
 }
